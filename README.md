@@ -1,6 +1,6 @@
-<h1 align="center">Clock App</h1>
+# Clock App
 
-<p align="center">Live Site <a target="_blank" href="https://clockapp-sigma.vercel.app/">Here</a>.</p>
+Live Site [Here](https://clockapp-sigma.vercel.app/)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
