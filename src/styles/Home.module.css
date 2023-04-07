@@ -1,11 +1,15 @@
 .main {
 	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
 }
 .main > .superior {
 	min-height: 400px;
 	color: white;
 	padding: 0 10%;
-	background: black;
 }
 .main > .superior > .quote {
 	color: white;

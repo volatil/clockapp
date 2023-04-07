@@ -40,38 +40,11 @@ export default function Home({ forestDay, quote }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main className={css.main}>
-				<section className={css.superior} style={{ background: `url("${forestDay}")`, backgroundSize: "cover" }}>
+			<main className={css.main} style={{ background: `url("${forestDay}")`, backgroundSize: "cover" }}>
+				<section className={css.superior}>
 					<TheQuotes thequote={quote} author="Ada Lovelace" />
 
 					<TheTime />
-					<div className={css.ciudadyboton}>
-						<div className={css.ciudad}>
-							<p>IN LONDON, UK</p>
-						</div>
-						<div className={css.vermasmens}>
-							<button type="button">more</button>
-						</div>
-					</div>
-				</section>
-
-				<section className={css.inferior}>
-					<div>
-						<p className="titulo">CURRENT TIMEZONE</p>
-						<p className="grande">Europe/London</p>
-					</div>
-					<div>
-						<p className="titulo">DAY OF THE WEEK</p>
-						<p className="grande">5</p>
-					</div>
-					<div>
-						<p className="titulo">DAY OF THE YEAR</p>
-						<p className="grande">295</p>
-					</div>
-					<div>
-						<p className="titulo">WEEK NUMBER</p>
-						<p className="grande">42</p>
-					</div>
 				</section>
 			</main>
 		</>
