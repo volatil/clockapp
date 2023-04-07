@@ -1,27 +1,25 @@
-import { useState } from "react";
-
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 
-import bgrandom from "../helpers/helpers";
+import { randomnumber, quotes } from "../helpers/helpers";
 
 import css from "../styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export async function getServerSideProps(context) {
-	bgrandom();
-	const forestDay = `/assets/images/forest${bgrandom()}.jpg`;
+export async function getServerSideProps() {
+	let quote = quotes();
+	quote = quote[randomnumber(0, 8)];
+
+	const forestDay = `/assets/images/day/forest${randomnumber(1, 6)}.jpg`;
 
 	return {
-		props: { forestDay }, // will be passed to the page component as props
+		props: { forestDay, quote },
 	};
 }
 
-export default function Home({ forestDay }) {
-	console.debug( forestDay );
-
+export default function Home({ forestDay, quote }) {
 	return (
 		<>
 			<Head>
@@ -31,16 +29,15 @@ export default function Home({ forestDay }) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className={css.main}>
-				<img src={forestDay} alt="forest" />
-				<section id="superior">
+				<section className={css.superior} style={{ background: `url("${forestDay}")`, backgroundSize: "cover" }}>
 					<div className={css.quote}>
-						<p>camaron que se duerme se lo lleva la corriente</p>
-						<span>Chapulin colorado</span>
+						<p>{quote}</p>
+						<span>Ada Lovelace</span>
 					</div>
 
 					<div className={css.hora}>
 						<div className={css.mensaje}>
-							<img src="/assets/svg/sun.svg" alt="sol/luna" />
+							<img src="/assets/svg/sun.svg" alt="sol/luna" style={{ width: "40px" }} />
 							<p>good morning</p>
 						</div>
 					</div>
@@ -54,7 +51,7 @@ export default function Home({ forestDay }) {
 					</div>
 				</section>
 
-				<section className="inferior">
+				<section className={css.inferior}>
 					<div>
 						<p className="titulo">CURRENT TIMEZONE</p>
 						<p className="grande">Europe/London</p>
