@@ -1,11 +1,17 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
+
+import bgrandom from "../helpers/helpers";
+
 import css from "../styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+	bgrandom();
+	const forestDay = `/assets/images/forest${bgrandom()}.jpg`;
+
 	return (
 		<>
 			<Head>
@@ -15,6 +21,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className={css.main}>
+				<img src={forestDay} alt="forest" />
 				<section id="superior">
 					<div className={css.quote}>
 						<p>camaron que se duerme se lo lleva la corriente</p>
@@ -23,9 +30,36 @@ export default function Home() {
 
 					<div className={css.hora}>
 						<div className={css.mensaje}>
-							<img alt="sol/luna" />
+							<img src="/assets/svg/sun.svg" alt="sol/luna" />
 							<p>good morning</p>
 						</div>
+					</div>
+					<div className={css.ciudadyboton}>
+						<div className={css.ciudad}>
+							<p>IN LONDON, UK</p>
+						</div>
+						<div className={css.vermasmens}>
+							<button type="button">more</button>
+						</div>
+					</div>
+				</section>
+
+				<section className="inferior">
+					<div>
+						<p className="titulo">CURRENT TIMEZONE</p>
+						<p className="grande">Europe/London</p>
+					</div>
+					<div>
+						<p className="titulo">DAY OF THE WEEK</p>
+						<p className="grande">5</p>
+					</div>
+					<div>
+						<p className="titulo">DAY OF THE YEAR</p>
+						<p className="grande">295</p>
+					</div>
+					<div>
+						<p className="titulo">WEEK NUMBER</p>
+						<p className="grande">42</p>
 					</div>
 				</section>
 			</main>
