@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
@@ -8,9 +10,17 @@ import css from "../styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export async function getServerSideProps(context) {
 	bgrandom();
 	const forestDay = `/assets/images/forest${bgrandom()}.jpg`;
+
+	return {
+		props: { forestDay }, // will be passed to the page component as props
+	};
+}
+
+export default function Home({ forestDay }) {
+	console.debug( forestDay );
 
 	return (
 		<>
