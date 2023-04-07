@@ -8,9 +8,40 @@ import css from "../styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+function TheQuotes(props) {
+	const { author, thequote } = props;
+	return (
+		<div className={css.quote}>
+			<p>{`"${thequote}"`}</p>
+			<strong>{author}</strong>
+		</div>
+	);
+}
+
+function TheTime() {
+	const hours = {
+		hour: new Date().getHours(),
+		minute: new Date().getMinutes(),
+	};
+
+	return (
+		<div className={css.hora}>
+			<div className={css.superior}>
+				<img src="/assets/svg/sun.svg" alt="sol/luna" style={{ width: "40px" }} />
+				<p>GOOD MORNING, IT&apos;S CURRENTLY</p>
+			</div>
+			<div className={css.inferior}>
+				{/* <p>11:37 <span>PM</span></p> */}
+				<p>{`${hours.hour}:${hours.minute}`} <span>PM</span></p>
+			</div>
+		</div>
+	);
+}
+
 export async function getServerSideProps() {
 	let quote = quotes();
-	quote = quote[randomnumber(0, 8)];
+	// console.debug(  );
+	quote = quote[randomnumber(0, quote.length - 1)];
 
 	const forestDay = `/assets/images/day/forest${randomnumber(1, 6)}.jpg`;
 
@@ -30,17 +61,15 @@ export default function Home({ forestDay, quote }) {
 			</Head>
 			<main className={css.main}>
 				<section className={css.superior} style={{ background: `url("${forestDay}")`, backgroundSize: "cover" }}>
-					<div className={css.quote}>
-						<p>{`"${quote}"`}</p>
-						<strong>Ada Lovelace</strong>
-					</div>
+					<TheQuotes thequote={quote} author="Ada Lovelace" />
 
-					<div className={css.hora}>
+					<TheTime />
+					{/* <div className={css.hora}>
 						<div className={css.mensaje}>
 							<img src="/assets/svg/sun.svg" alt="sol/luna" style={{ width: "40px" }} />
 							<p>good morning</p>
 						</div>
-					</div>
+					</div> */}
 					<div className={css.ciudadyboton}>
 						<div className={css.ciudad}>
 							<p>IN LONDON, UK</p>
