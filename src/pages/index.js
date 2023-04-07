@@ -31,8 +31,8 @@ export default function Home({ forestDay, quote }) {
 			<main className={css.main}>
 				<section className={css.superior} style={{ background: `url("${forestDay}")`, backgroundSize: "cover" }}>
 					<div className={css.quote}>
-						<p>{quote}</p>
-						<span>Ada Lovelace</span>
+						<p>{`"${quote}"`}</p>
+						<strong>Ada Lovelace</strong>
 					</div>
 
 					<div className={css.hora}>

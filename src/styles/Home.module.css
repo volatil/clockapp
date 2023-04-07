@@ -4,9 +4,23 @@
 .main .superior {
 	min-height: 400px;
 	color: white;
+	padding: 0 10%;
 }
 .main .superior .quote {
-	color: black;
+	color: white;
+	letter-spacing: 0.05em;
+	text-shadow: 0px 2px 20px black;
+	width: 50%;
+	padding-top: 20px;
+	margin-bottom: 200px;
+}
+.main .superior .quote > p {
+	font-size: 1.3em;
+	line-height: 1.6em;
+	margin-bottom: 30px;
+}
+.main .superior .quote > strong {
+	font-size: 1.1em;
 }
 
 
