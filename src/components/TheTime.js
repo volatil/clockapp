@@ -1,7 +1,6 @@
 import css from "../styles/Home.module.css";
 
 function TheTime() {
-	console.debug( String(new Date().getHours()).length );
 	const hours = {
 		hour: String(new Date().getHours()).length <= 1 ? `0${new Date().getHours()}` : new Date().getHours(),
 		minute: String(new Date().getMinutes()).length <= 1 ? `0${new Date().getMinutes()}` : new Date().getMinutes(),
