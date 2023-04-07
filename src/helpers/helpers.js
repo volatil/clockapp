@@ -38,7 +38,6 @@ export const quotes = function () {
 		"Las chicas son capaces de hacer todo lo que los hombres son capaces de hacer. A veces tienen más imaginación que los hombres",
 		"No tengo un sentimiento de inferioridad. Nunca lo he tenido. Soy tan bueno como cualquiera, pero no mejor",
 		"Te gusta lo que haces, y luego harás lo mejor que puedas",
-		"Siempre tendremos STEM con nosotros. Algunas cosas desaparecerán del ojo público y desaparecerán, pero siempre habrá ciencia, ingeniería y tecnología. Y siempre, siempre habrá matemáticas",
 		"Necesitábamos ser asertivas como mujeres en esos días, asertivas y agresivas, y el grado en que teníamos que ser así dependía de dónde estabas. Tenía que serlo",
 		"Me gusta aprender. Eso es un arte y una ciencia",
 		"En matemáticas, o tienes razón o estás equivocado",
