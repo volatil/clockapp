@@ -24,7 +24,7 @@ export async function getServerSideProps() {
 	let quote = quotes();
 	quote = quote[randomnumber(0, quote.length - 1)];
 
-	const forestDay = `/assets/images/day/forest${randomnumber(1, 6)}.jpg`;
+	const forestDay = `/assets/images/day/forest${randomnumber(1, 6)}-min.jpg`;
 
 	return {
 		props: { forestDay, quote },
